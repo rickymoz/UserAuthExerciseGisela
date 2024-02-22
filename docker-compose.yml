@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: userAuthExercise
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: auth_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 12345
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
